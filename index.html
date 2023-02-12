@@ -1,65 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+< html  lang =" zh " >
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT-Web</title>
-  <style>
-    body {
-      margin: 0 !important;
-    }
-  </style>
-</head>
+<头>
+  <元 字符集=" UTF-8 " >
+  < meta  name =" viewport " content =" width=device-width, initial-scale=1.0 " >
+  < title > ChatGPT-Web </ title >
+  <脚本 src =" https://cdn.bootcdn.net/ajax/libs/vue/3.2.45/vue.global.js " > </脚本>
+  < link  href =" https://cdn.bootcdn.net/ajax/libs/element-plus/2.2.28/index.css " rel ="样式表" />
 
-<body>
-  <a href="https://github.com/SmileBuild/ChatGPT-Web" class="github-corner" aria-label="View source on GitHub"><svg
-      width="80" height="80" viewBox="0 0 250 250"
-      style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-      <path
-        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-      <path
-        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-        fill="currentColor" class="octo-body"></path>
-    </svg></a>
-  <style>
-    .github-corner:hover .octo-arm {
-      animation: octocat-wave 560ms ease-in-out
+
+  <脚本 src =" https://cdn.bootcdn.net/ajax/libs/axios/1.2.5/axios.min.js " > </脚本>
+  <脚本 src =" https://cdn.bootcdn.net/ajax/libs/element-plus/2.2.28/index.full.js " > </脚本>
+
+  <风格>
+    . github 角：悬停。八臂{
+      动画： octocat-wave 560毫秒缓入缓出
     }
 
     @keyframes octocat-wave {
 
-      0%,
+      0 % ,
       100% {
-        transform: rotate(0)
+        变换： 旋转（0）
       }
 
-      20%,
-      60% {
-        transform: rotate(-25deg)
+      20 % ,
+      60 % {
+        变换： 旋转（-25度）
       }
 
-      40%,
-      80% {
-        transform: rotate(10deg)
+      40 % ,
+      80 % {
+        变换： 旋转（10度）
+      }
+    }
+
+    @media（最大宽度：500像素）{
+      . github 角：悬停。八臂{
+        动画：无
+      }
+
+      . github 角。八臂{
+        动画： octocat-wave 560毫秒缓入缓出
       }
     }
 
-    @media (max-width:500px) {
-      .github-corner:hover .octo-arm {
-        animation: none
-      }
+    . el-header {
+      背景： var（--el-color-black）；
+      颜色：爱丽丝蓝；
+    }
 
-      .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
+    . 滑块{
+      显示：弹性；
+      对齐项目：居中；
+    }
+
+    . 滑块。el滑块{
+      保证金顶部： 0；
+      左边距： 12像素；
+    }
+
+    . 滑块。滑块标签{
+      字体大小： 14像素；
+      颜色： var（--el-text-color-secondary）；
+      行高： 44像素；
+      弹性： 1；
+      溢出：隐藏；
+      文本溢出：省略号；
+      空白： nowrap；
+      保证金底部： 0；
+    }
+
+    . 滑块。滑块标签+。el滑块{
+      弹性： 0  0  70 %；
+    }
+
+    身体{
+      保证金： 0  ！重要；
+      高度： 100 %；
+    }
+  </风格>
+
+</头>
+
+<正文>
+  < a  href =" https://github.com/SmileBuild/ChatGPT-Web " class =" github-corner " aria-label ="在 GitHub 上查看源代码" > < svg
+      宽度= " 80 "高度= " 80 "视图框= " 0 0 250 250 "
+      style =" fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; " aria-hidden =" true " >
+      <路径 d =" M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z " > </路径>
+      <路径
+        d = " M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.32.3,85.35,9 C127.32.3,85.518 C122.9,97.6 130.6,101.9 134.4,103.2 "
+        fill =" currentColor " style =" transform-origin: 130px 106px; " class =" octo-arm " > </ path >
+      <路径
+        d =“ M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 139.98.4 142.2,98.6 C133.8,88.8,88.0 51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,23.8,783.12 C183.1,58.6 187.2,61.8 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8.3,3,3,3,112.5 C181.9,9,9,128.9 168.3,3,3,3,3,122.5 157.7,114.1157.1157.1157.1157,157,9.9.9.9.9.ucn.19,9,9.9.9.9.uctel 141.6,141.9 141.8,141.8 Z "
+        fill =" currentColor " class =" octo-body " > </ path >
+    < / svg > </a> _
+  < div  id = "你好-vue " >
+
+    <容器>
+      < el 标题>
+        < h1 > ChatGPT-Web v0.2.2 </ h1 >
+      </ el-header >
+      <主要>
+        < el-row  :gutter =" 40 " >
+          < el-col  :span =" 8 " class =" col-params " v-loading =" loading " element-loading-text ="正在加载... "
+            :element-loading-spinner =" svg "元素加载-svg-view-box =" -10, -10, 50, 50 "
+            元素加载背景=" rgba(122, 122, 122, 0.8) " >
+            < el-button  size =" large " type =" success " @click =" submitForm " >确认确定</ el-button >
+            < h2 >参数参数配置</ h2 >
+            <电子表格>
+              < h4 > API 密钥</ h4 >
+              < el-input  v-model =" key " placeholder =" API秘钥" show-password  type =" password " > </ el-input >
+              < h4 >提示</ h4 >
+              < el-input  type =" textarea " v-model =" prompt " placeholder ="输入内容" rows =" 10 " > </ el-input >
+
+              < h4 > Max_tokens </ h4 >
+
+              < el-input-number  type =" number " v-model =" max_tokens " > </ el-input-number >
+              < h4 >温度</ h4 >
+              < div  class ="滑块" >
+                < span  class =" slider-laber " >温度</ span >
+                < el-slider  v-model ="温度" :step =" 0.1 " :min =" 0 " :max =" 1 "显示输入/>
+              </分格>
+              < h4 > Top_p </ h4 >
+              < div  class ="滑块" >
+                < span  class =" slider-laber " > Top_p </ span >
+                < el-slider  v-model =" top_p " :step =" 0.1 " :min =" 0 " :max =" 1 "显示输入/>
+              </分格>
+              < h4 > Frequency_penalty </ h4 >
+              < div  class ="滑块" >
+                < span  class =" slider-laber " > Frequency_penalty </ span >
+                < el-slider  v-model =" frequency_penalty " :step =" 0.1 " :min =" -2 " :max =" 2 " show-input />
+              </分格>
+              < h4 > Presence_penalty </ h4 >
+              < div  class ="滑块" >
+                < span  class =" slider-laber " > Presence_penalty </ span >
+                < el-slider  v-model =" presence_penalty " :step =" 0.1 " :min =" -2 " :max =" 2 "显示输入/>
+              </分格>
+              < h4 >型号</ h4 >
+              < el-select  v-model =" model " class =" m-2 " placeholder =" Model " size =" large " >
+                < el-option  v-for =" item in models " :key =" item.value " :label =" item.label " :value =" item.value " > {{
+                  物品
+                  }} </ el选项>
+              </ el-选择>
+            </ el-表单>
+
+
+
+            < el-link  href =" https://beta.openai.com/docs/api-reference/completions/create#completions/create-model "
+              target =" _blank " type =" danger " >参数信息（参数说明）</ el-link >
+
+
+
+          </ el-col >
+          < el-col  :span =" 16 " >
+            < el-button  size =" large " type =" warning " @click =" downloadTxt " :disabled =" download_disable " >保存
+              保存</ el-button >
+            < h2 >响应结果</ h2 >
+
+            < p  id =" result " style =" color:red;white-space: pre-wrap; " > {{ response }} </ p >
+          </ el-col >
+        </ el行>
+      </ el-main >
+    </ el-容器>
+  </分格>
+
+  <脚本>
+    const  HelloVueApp  =  {
+      数据（） {
+        返回 {
+          加载：错误，
+          键：'' ，
+          提示：'' ，
+          温度: 1 ,
+          top_p：1 ，
+          最大令牌数：2048 ，
+          frequency_penalty : 0 ,
+          presence_penalty : 0 ,
+          停止：[ “人类：” ， “AI：” ] ，
+          型号：'text-davinci-003' ，
+          模型：[ 'text-davinci-003' ， 'text-davinci-002' ， 'text-curie-001' ] ，
+          回应：'' ，
+          下载_禁用：真
+        }
+      } ,
+      观看：{
+        响应（响应） {
+          如果 （响应 ==  '' ） {
+            这个。下载_禁用 = 真；
+          } 否则 {
+            这个。download_disable  =  false ;
+          }
+        }
+      } ,
+      方法：{
+        下载文本( )  {
+          let  text  =  '提示：'  +  this . 提示 +  '\n'  + 文档。getElementById （'结果' ）。内部文本；
+          让 元素 = 文档。创建元素（“一个” ）；
+          let  file  =  new  Blob ( [ text ] ,  {  type : 'text/plain'  } ) ;
+          元素。href  = 网址。createObjectURL （文件）；
+          元素。下载 =  "下载.txt" ;
+          元素。点击( ) ；
+        } ,
+        提交表格( )  {
+          让 数据 =  {
+            提示：这个。提示，
+            温度：这个。温度,
+            top_p：这个。顶层，
+            型号：这个。模型,
+            max_tokens：这个。最大令牌数，
+            frequency_penalty：这个。frequency_penalty ,
+            presence_penalty：这个。presence_penalty ,
+            停止：这个。停止
+          }
+          这个。加载 = 真
+          公理。发布（'https://api.openai.com/v1/completions' ， 数据， {
+            标题：{
+              '内容类型'：'应用程序/json' ，
+              '授权'：'不记名'  + 这个。关键，
+            }
+          } )
+            . 然后（响应 =>  {
+              这个。加载 = 假
+              这个。响应 = 响应。数据。选择[ 0 ] 。文本；
+              控制台。日志（这个。响应）
+            } )
+            . 赶上（错误 =>  {
+              这个。加载 = 假
+              控制台。日志（错误）；
+            } ) ;
+        }
       }
     }
-  </style>
 
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
+    观。创建应用程序（HelloVueApp ）。使用( ElementPlus ) 。安装（'#hello-vue' ）
+  </脚本>
+</正文>
 
-</html>
+</ html >
