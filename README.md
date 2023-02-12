@@ -11,7 +11,7 @@ You can use online link for the project now.
 
 你可以点击下面的链接直接使用。
 
-[ChatGPT-Web online] 
+https://wjojo.github.io/wechat-web
 
 # See you on the mountain top of New AI's World.
 
